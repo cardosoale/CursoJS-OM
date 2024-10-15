@@ -11,16 +11,32 @@
 
           <%- include('includes/messages')%>
 
-            <div class="responsive-table">
-              <table class="table">
-                <tr>
-                  <td>Alexandre</td>
-                  <td>Pereira Cardoso</td>
-                  <td>15 98169-0626</td>
-                  <td>cardoal01@gmail.com</td>
-                </tr>
-              </table>
-            </div>
+            <% if(contatos.length> 0) {%>
+              <div class="responsive-table">
+                <table class="table">
+                  <tr>
+                    <% contatos.forEach(contato=> {%>
+                      <td>
+                        <%= contato.nome%>
+                      </td>
+                      <td>
+                        <%= contato.sobrenome%>
+                      </td>
+                      <td>
+                        <%= contato.email%>
+                      </td>
+                      <td>
+                        <%= contato.telefone%>
+                      </td>
+                      <td><a href="/contato/index/<%= contato._id%>">Editar</a></td>
+                      <td><a class="text-danger" href="/contato/delete/<%= contato._id%>">Deletar</a></td>
+                  </tr>
+                  <% })%>
+                </table>
+              </div>
+              <% } else {%>
+                <p class="text-center lead">Não existem contatos cadastrados</p>
+                <% } %>
 
         </div>
 
