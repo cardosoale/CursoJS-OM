@@ -8,7 +8,7 @@ export default function Login() {
       <Title isRed={false}>Test component</Title>
       <small>Oii</small>
       <p>Lorem ipsum dolor sit amet.</p>
-      <a href="">link bobo</a>
+      <button type="button">Enviar</button>
     </Container>
   );
 }
