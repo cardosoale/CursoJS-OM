@@ -1,15 +1,2 @@
-<<<<<<< HEAD
 node_modules
 .env
-=======
-tests
-.vscode
-node-modules
-node_modules
-.env
-env
-venv
-testes
-.DS_Store
-senhamongo.txt
->>>>>>> ad371b81f2895994b5504dbf9c8cf0f5c6202908

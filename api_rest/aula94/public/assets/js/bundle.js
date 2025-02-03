@@ -1,2 +1,0 @@
-(()=>{"use strict";var n=new function n(o,i){!function(n,o){if(!(n instanceof o))throw new TypeError("Cannot call a class as a function")}(this,n),this.nome=o,this.sobrenome=i}("Joãozinho","Oliveira");console.log(n)})();
-//# sourceMappingURL=bundle.js.map
