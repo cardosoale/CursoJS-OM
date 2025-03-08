@@ -40,10 +40,26 @@ function* registerRequest({ payload }) {
         password: password || undefined,
       });
       toast.success('Conta alterada com sucesso!');
+      yield put(actions.registerUpdatedSuccess({ nome, email, password }));
+    } else {
+      yield call(axios.post, '/users', {
+        email,
+        nome,
+        password: password,
+      });
+      toast.success('Conta criada com sucesso!');
+      yield put(actions.registerCreatedSuccess({ nome, email, password }));
+      history.push('/login');
     }
-    yield put(actions.registerSuccess({ nome, email, password }));
   } catch (e) {
     const errors = get(e, 'response.data.errors', []);
+    const status = get(e, 'response.data.status', 0);
+
+    if (status === 401) {
+      toast.info('Você precisa logar novamente');
+      yield put(actions.loginFailure());
+      return history.push('/login');
+    }
 
     if (errors.length > 0) {
       errors.map((error) => toast.error(error));
