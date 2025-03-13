@@ -9,7 +9,7 @@ import {
 } from 'react-icons/fa';
 
 import { Container } from '../../styles/GlobalStyles';
-import { AlunoContainer, ProfilePicture } from './styled';
+import { AlunoContainer, ProfilePicture, Title, NovoAluno } from './styled';
 import axios from '../../services/axios';
 
 import Loading from '../../components/loading';
@@ -63,7 +63,10 @@ export default function Alunos() {
   return (
     <Container>
       <Loading isLoading={isLoading} />
-      <h1>Alunos</h1>
+      <Title>Alunos</Title>
+      <button>
+        <NovoAluno to="/aluno/">Novo aluno</NovoAluno>
+      </button>
       <AlunoContainer>
         {alunos.map((aluno, index) => (
           <div key={String(aluno.id)}>
