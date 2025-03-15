@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import { Container } from '../../styles/GlobalStyles';
 import { Form } from './styled';
-import Loading from '../../components/loading';
+import Loading from '../../components/Loading';
 import * as actions from '../../store/modules/auth/actions';
 
 export default function Register() {

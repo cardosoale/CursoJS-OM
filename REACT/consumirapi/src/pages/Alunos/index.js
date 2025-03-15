@@ -12,7 +12,7 @@ import { Container } from '../../styles/GlobalStyles';
 import { AlunoContainer, ProfilePicture, Title, NovoAluno } from './styled';
 import axios from '../../services/axios';
 
-import Loading from '../../components/loading';
+import Loading from '../../components/Loading';
 import { toast } from 'react-toastify';
 
 export default function Alunos() {
