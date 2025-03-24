@@ -2,6 +2,7 @@ import './style.css'
 import { Link } from 'react-router-dom'
 
 export const Menu = () => {
+
   return (
     <nav className="menu">
     <ul>
